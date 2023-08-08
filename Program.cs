@@ -20,6 +20,19 @@ Rec(number);
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
+Console.WriteLine("Введите первое число: ");
+int numberM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+int numberN = Convert.ToInt32(Console.ReadLine());
+int SumFromMtoN(int numberM, int numberN)
+{
+    if (numberM == numberN) return 0;
+    return numberN += SumFromMtoN(numberM, numberN - 1);
+}
+int sum = SumFromMtoN(numberM - 1, numberN);
+Console.WriteLine($"Сумма элементов в промежутке от {numberM} до {numberN} = {sum}");
+
+
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
 //Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
